@@ -3,11 +3,13 @@ body {
     background-color: #1a1a1a;
     color: #eee;
     text-align: center;
-    padding: 30px;
+    padding: 15px;
+    margin: 0;
 }
 
 h1 {
     margin-bottom: 10px;
+    font-size: 24px;
 }
 
 #smiley {
@@ -17,29 +19,35 @@ h1 {
 
 .container {
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    gap: 40px;
-    align-items: flex-start;
+    align-items: center;
+    gap: 30px;
+    margin: 0 auto;
+    max-width: 100%;
 }
 
 #grille {
     display: grid;
-    grid-template-columns: repeat(12, 40px);
-    gap: 5px;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 2px;
     user-select: none;
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
 }
 
 .cellule {
-    width: 40px;
-    height: 40px;
+    aspect-ratio: 1;
     background-color: #333;
     color: #fff;
-    font-size: 18px;
+    font-size: 14px;
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 4px;
     transition: 0.2s;
+    width: 100%;
 }
 
 .cellule.mot {
@@ -56,17 +64,30 @@ h1 {
 
 /* Liste de mots */
 #liste-mots {
-    text-align: left;
-    min-width: 200px;
+    text-align: center;
+    width: 100%;
+    max-width: 500px;
 }
 
 #liste-mots h2 {
     margin-bottom: 10px;
+    font-size: 20px;
+}
+
+#liste-mots ul {
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
 }
 
 #liste-mots li {
-    font-size: 18px;
-    margin-bottom: 6px;
+    font-size: 16px;
+    padding: 5px 10px;
+    background-color: #2c2c2c;
+    border-radius: 5px;
 }
 
 #liste-mots li.trouve {
@@ -76,6 +97,107 @@ h1 {
 
 #message {
     margin-top: 20px;
-    font-size: 22px;
+    font-size: 20px;
     font-weight: bold;
+    padding: 0 15px;
+}
+
+button {
+    margin-top: 15px;
+    padding: 12px 24px;
+    font-size: 16px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background-color: #2980b9;
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+/* Tablette et desktop */
+@media (min-width: 768px) {
+    body {
+        padding: 30px;
+    }
+
+    h1 {
+        font-size: 32px;
+    }
+
+    .container {
+        flex-direction: row;
+        align-items: flex-start;
+        gap: 40px;
+    }
+
+    #grille {
+        grid-template-columns: repeat(12, 40px);
+        gap: 5px;
+        max-width: none;
+        width: auto;
+    }
+
+    .cellule {
+        width: 40px;
+        height: 40px;
+        font-size: 18px;
+    }
+
+    #liste-mots {
+        text-align: left;
+        min-width: 200px;
+        max-width: none;
+        width: auto;
+    }
+
+    #liste-mots ul {
+        display: block;
+    }
+
+    #liste-mots li {
+        font-size: 18px;
+        margin-bottom: 6px;
+        padding: 0;
+        background-color: transparent;
+    }
+
+    #message {
+        font-size: 22px;
+    }
+
+    button {
+        font-size: 18px;
+        padding: 15px 30px;
+    }
+}
+
+/* Petits écrans (smartphones en portrait) */
+@media (max-width: 380px) {
+    h1 {
+        font-size: 20px;
+    }
+
+    #smiley {
+        font-size: 36px;
+    }
+
+    .cellule {
+        font-size: 12px;
+    }
+
+    #liste-mots li {
+        font-size: 14px;
+    }
+
+    #message {
+        font-size: 18px;
+    }
 }
