@@ -1,0 +1,81 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #1a1a1a;
+    color: #eee;
+    text-align: center;
+    padding: 30px;
+}
+
+h1 {
+    margin-bottom: 10px;
+}
+
+#smiley {
+    font-size: 48px;
+    margin-bottom: 15px;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    align-items: flex-start;
+}
+
+#grille {
+    display: grid;
+    grid-template-columns: repeat(12, 40px);
+    gap: 5px;
+    user-select: none;
+}
+
+.cellule {
+    width: 40px;
+    height: 40px;
+    background-color: #333;
+    color: #fff;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px;
+    transition: 0.2s;
+}
+
+.cellule.mot {
+    cursor: pointer;
+}
+
+.cellule.selection {
+    background-color: #e67e22;
+}
+
+.cellule.trouve {
+    background-color: #27ae60;
+}
+
+/* Liste de mots */
+#liste-mots {
+    text-align: left;
+    min-width: 200px;
+}
+
+#liste-mots h2 {
+    margin-bottom: 10px;
+}
+
+#liste-mots li {
+    font-size: 18px;
+    margin-bottom: 6px;
+}
+
+#liste-mots li.trouve {
+    text-decoration: line-through;
+    color: #27ae60;
+}
+
+#message {
+    margin-top: 20px;
+    font-size: 22px;
+    font-weight: bold;
+}
